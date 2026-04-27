@@ -1,4 +1,4 @@
-import { Instagram, Facebook, Twitter, MapPin, Mail, Phone } from "lucide-react";
+import { Instagram, Facebook, Music2, MapPin, Mail, Phone } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 const Footer = () => (
@@ -11,8 +11,12 @@ const Footer = () => (
             Premium curtains and interior accessories crafted for the modern home.
           </p>
           <div className="flex gap-3 mt-6">
-            {[Instagram, Facebook, Twitter].map((Icon, i) => (
-              <a key={i} href="#" className="h-10 w-10 border border-primary-foreground/20 flex items-center justify-center hover:bg-accent hover:border-accent transition-smooth">
+            {[
+              { Icon: Instagram, href: "https://www.instagram.com/usmaniinterior1/", label: "Instagram" },
+              { Icon: Facebook, href: "https://www.facebook.com/profile.php?id=61582103248705", label: "Facebook" },
+              { Icon: Music2, href: "https://www.tiktok.com/@usmaniinterior123", label: "TikTok" },
+            ].map(({ Icon, href, label }) => (
+              <a key={label} href={href} target="_blank" rel="noopener" aria-label={label} className="h-10 w-10 border border-primary-foreground/20 flex items-center justify-center hover:bg-accent hover:border-accent transition-smooth">
                 <Icon className="h-4 w-4" />
               </a>
             ))}
@@ -42,7 +46,7 @@ const Footer = () => (
           <ul className="space-y-3 text-sm text-primary-foreground/70">
             <li className="flex gap-3"><MapPin className="h-4 w-4 text-accent shrink-0 mt-0.5" /> Shop 115, Rabi Center, Wallayat Complex Plaza, Bahria Town Way, Islamabad 46000, Pakistan</li>
             <li className="flex gap-3"><Phone className="h-4 w-4 text-accent shrink-0 mt-0.5" /> +92 311 5370357</li>
-            <li className="flex gap-3"><Mail className="h-4 w-4 text-accent shrink-0 mt-0.5" /> hello@usmaniinterior.com</li>
+            <li className="flex gap-3"><Mail className="h-4 w-4 text-accent shrink-0 mt-0.5" /> akmalusmani123@gmail.com</li>
           </ul>
         </div>
       </div>
