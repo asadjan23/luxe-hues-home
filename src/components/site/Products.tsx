@@ -64,8 +64,8 @@ const Products = () => {
               <div className="p-5 text-center">
                 <h3 className="font-serif text-xl text-primary mb-1">{p.name}</h3>
                 <div className="flex items-center justify-center gap-2">
-                  <span className="text-accent font-medium">${p.price}</span>
-                  {p.oldPrice && <span className="text-muted-foreground line-through text-sm">${p.oldPrice}</span>}
+                  <span className="text-accent font-medium">{fmt(p.price)}</span>
+                  {p.oldPrice && <span className="text-muted-foreground line-through text-sm">{fmt(p.oldPrice)}</span>}
                 </div>
               </div>
             </article>
