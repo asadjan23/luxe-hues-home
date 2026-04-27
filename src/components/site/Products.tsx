@@ -89,8 +89,8 @@ const Products = () => {
               </div>
               <p className="text-muted-foreground mb-6 leading-relaxed">{quick.desc}</p>
               <div className="flex items-baseline gap-3 mb-8">
-                <span className="font-serif text-3xl text-accent">${quick.price}</span>
-                {quick.oldPrice && <span className="text-muted-foreground line-through">${quick.oldPrice}</span>}
+                <span className="font-serif text-3xl text-accent">{fmt(quick.price)}</span>
+                {quick.oldPrice && <span className="text-muted-foreground line-through">{fmt(quick.oldPrice)}</span>}
               </div>
               <button onClick={() => { toast.success(`${quick.name} added to cart`); setQuick(null); }} className="bg-primary text-primary-foreground py-4 uppercase text-xs tracking-[0.3em] hover:bg-accent transition-smooth flex items-center justify-center gap-2">
                 <ShoppingBag className="h-4 w-4" /> Add to Cart
