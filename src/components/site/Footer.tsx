@@ -55,7 +55,7 @@ const Footer = () => (
 
     {/* WhatsApp floating button */}
     <a
-      href="https://wa.me/923001234567"
+      href="https://wa.me/923115370357"
       target="_blank"
       rel="noopener"
       aria-label="Chat on WhatsApp"
