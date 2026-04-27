@@ -17,11 +17,13 @@ type Product = {
 };
 
 const products: Product[] = [
-  { id: 1, name: "Sahara Linen Drape", price: 89, oldPrice: 120, tag: "Bestseller", img: p1, desc: "Sheer beige linen panel with grommet top — diffuses light beautifully." },
-  { id: 2, name: "Vienna Velvet Curtain", price: 149, tag: "New", img: p2, desc: "Plush velvet drape in warm caramel tones — luxurious weight and sheen." },
-  { id: 3, name: "Onyx Blackout Set", price: 199, img: p3, desc: "Premium blackout panels with handcrafted gold tassel tiebacks." },
-  { id: 4, name: "Ivory Damask Panel", price: 169, oldPrice: 210, img: p4, desc: "Embroidered damask pattern with subtle ivory shimmer — timeless elegance." },
+  { id: 1, name: "Sahara Linen Drape", price: 12500, oldPrice: 16500, tag: "Bestseller", img: p1, desc: "Sheer beige linen panel with grommet top — diffuses light beautifully." },
+  { id: 2, name: "Vienna Velvet Curtain", price: 18900, tag: "New", img: p2, desc: "Plush velvet drape in warm caramel tones — luxurious weight and sheen." },
+  { id: 3, name: "Onyx Blackout Set", price: 24500, img: p3, desc: "Premium blackout panels with handcrafted gold tassel tiebacks." },
+  { id: 4, name: "Ivory Damask Panel", price: 21500, oldPrice: 26000, img: p4, desc: "Embroidered damask pattern with subtle ivory shimmer — timeless elegance." },
 ];
+
+const fmt = (n: number) => `Rs ${n.toLocaleString("en-PK")}`;
 
 const Products = () => {
   const [quick, setQuick] = useState<Product | null>(null);
