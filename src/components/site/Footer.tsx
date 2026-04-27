@@ -40,8 +40,8 @@ const Footer = () => (
         <div>
           <h4 className="font-serif text-xl mb-5 text-white">Contact</h4>
           <ul className="space-y-3 text-sm text-primary-foreground/70">
-            <li className="flex gap-3"><MapPin className="h-4 w-4 text-accent shrink-0 mt-0.5" /> 24 Design District, Karachi</li>
-            <li className="flex gap-3"><Phone className="h-4 w-4 text-accent shrink-0 mt-0.5" /> +92 300 1234567</li>
+            <li className="flex gap-3"><MapPin className="h-4 w-4 text-accent shrink-0 mt-0.5" /> Shop 115, Rabi Center, Wallayat Complex Plaza, Bahria Town Way, Islamabad 46000, Pakistan</li>
+            <li className="flex gap-3"><Phone className="h-4 w-4 text-accent shrink-0 mt-0.5" /> +92 311 5370357</li>
             <li className="flex gap-3"><Mail className="h-4 w-4 text-accent shrink-0 mt-0.5" /> hello@usmaniinterior.com</li>
           </ul>
         </div>
@@ -55,7 +55,7 @@ const Footer = () => (
 
     {/* WhatsApp floating button */}
     <a
-      href="https://wa.me/923001234567"
+      href="https://wa.me/923115370357"
       target="_blank"
       rel="noopener"
       aria-label="Chat on WhatsApp"
