@@ -6,6 +6,7 @@ import WhyUs from "@/components/site/WhyUs";
 import Showcase from "@/components/site/Showcase";
 import Testimonials from "@/components/site/Testimonials";
 import CustomService from "@/components/site/CustomService";
+import FollowUs from "@/components/site/FollowUs";
 import Footer from "@/components/site/Footer";
 
 const Index = () => {
@@ -19,6 +20,7 @@ const Index = () => {
       <Showcase />
       <Testimonials />
       <CustomService />
+      <FollowUs />
       <Footer />
     </main>
   );
