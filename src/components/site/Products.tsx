@@ -17,11 +17,13 @@ type Product = {
 };
 
 const products: Product[] = [
-  { id: 1, name: "Sahara Linen Drape", price: 89, oldPrice: 120, tag: "Bestseller", img: p1, desc: "Sheer beige linen panel with grommet top — diffuses light beautifully." },
-  { id: 2, name: "Vienna Velvet Curtain", price: 149, tag: "New", img: p2, desc: "Plush velvet drape in warm caramel tones — luxurious weight and sheen." },
-  { id: 3, name: "Onyx Blackout Set", price: 199, img: p3, desc: "Premium blackout panels with handcrafted gold tassel tiebacks." },
-  { id: 4, name: "Ivory Damask Panel", price: 169, oldPrice: 210, img: p4, desc: "Embroidered damask pattern with subtle ivory shimmer — timeless elegance." },
+  { id: 1, name: "Sahara Linen Drape", price: 12500, oldPrice: 16500, tag: "Bestseller", img: p1, desc: "Sheer beige linen panel with grommet top — diffuses light beautifully." },
+  { id: 2, name: "Vienna Velvet Curtain", price: 18900, tag: "New", img: p2, desc: "Plush velvet drape in warm caramel tones — luxurious weight and sheen." },
+  { id: 3, name: "Onyx Blackout Set", price: 24500, img: p3, desc: "Premium blackout panels with handcrafted gold tassel tiebacks." },
+  { id: 4, name: "Ivory Damask Panel", price: 21500, oldPrice: 26000, img: p4, desc: "Embroidered damask pattern with subtle ivory shimmer — timeless elegance." },
 ];
+
+const fmt = (n: number) => `Rs ${n.toLocaleString("en-PK")}`;
 
 const Products = () => {
   const [quick, setQuick] = useState<Product | null>(null);
@@ -62,8 +64,8 @@ const Products = () => {
               <div className="p-5 text-center">
                 <h3 className="font-serif text-xl text-primary mb-1">{p.name}</h3>
                 <div className="flex items-center justify-center gap-2">
-                  <span className="text-accent font-medium">${p.price}</span>
-                  {p.oldPrice && <span className="text-muted-foreground line-through text-sm">${p.oldPrice}</span>}
+                  <span className="text-accent font-medium">{fmt(p.price)}</span>
+                  {p.oldPrice && <span className="text-muted-foreground line-through text-sm">{fmt(p.oldPrice)}</span>}
                 </div>
               </div>
             </article>
@@ -87,8 +89,8 @@ const Products = () => {
               </div>
               <p className="text-muted-foreground mb-6 leading-relaxed">{quick.desc}</p>
               <div className="flex items-baseline gap-3 mb-8">
-                <span className="font-serif text-3xl text-accent">${quick.price}</span>
-                {quick.oldPrice && <span className="text-muted-foreground line-through">${quick.oldPrice}</span>}
+                <span className="font-serif text-3xl text-accent">{fmt(quick.price)}</span>
+                {quick.oldPrice && <span className="text-muted-foreground line-through">{fmt(quick.oldPrice)}</span>}
               </div>
               <button onClick={() => { toast.success(`${quick.name} added to cart`); setQuick(null); }} className="bg-primary text-primary-foreground py-4 uppercase text-xs tracking-[0.3em] hover:bg-accent transition-smooth flex items-center justify-center gap-2">
                 <ShoppingBag className="h-4 w-4" /> Add to Cart
