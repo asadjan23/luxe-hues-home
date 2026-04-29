@@ -1,43 +1,52 @@
 import { Instagram } from "lucide-react";
+import { useEffect } from "react";
 
-// 👉 Replace SNAPWIDGET_SRC with the iframe src URL from snapwidget.com
-// (after creating an Instagram Responsive Grid widget for @usmaniinterior1)
-const SNAPWIDGET_SRC = "https://snapwidget.com/embed/1100489"; // placeholder demo widget
+const InstagramFeed = () => {
+  useEffect(() => {
+    // Load Elfsight widget script
+    const script = document.createElement('script');
+    script.src = 'https://elfsightcdn.com/platform.js';
+    script.async = true;
+    document.body.appendChild(script);
+    
+    return () => {
+      // Cleanup
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, []);
 
-const InstagramFeed = () => (
-  <section className="py-24 md:py-32 bg-secondary">
-    <div className="container">
-      <div className="text-center mb-12">
-        <p className="text-accent uppercase tracking-[0.3em] text-xs mb-4 font-medium">@usmaniinterior1</p>
-        <h2 className="text-4xl md:text-5xl text-primary mb-4">From our Instagram</h2>
-        <p className="text-muted-foreground max-w-xl mx-auto">
-          Real curtains, real homes. Tag us in your photos for a chance to be featured.
-        </p>
+  return (
+    <section className="py-24 md:py-32 bg-secondary">
+      <div className="container">
+        <div className="text-center mb-16">
+          <p className="text-accent uppercase tracking-[0.3em] text-xs mb-4 font-medium">@usmaniinterior1</p>
+          <h2 className="font-display text-5xl md:text-6xl text-primary mb-6">From Our Instagram</h2>
+          <p className="text-muted-foreground max-w-xl mx-auto text-lg">
+            Real curtains, real homes. Follow us for daily inspiration and exclusive collections.
+          </p>
+        </div>
+
+        {/* Elfsight Instagram Widget with your real app ID */}
+        <div className="max-w-6xl mx-auto mb-12">
+          <div className="elfsight-app-622b893c-80ab-450a-9ed4-78153b3f7400" data-elfsight-app-lazy></div>
+        </div>
+
+        {/* Follow Button */}
+        <div className="text-center">
+          <a
+            href="https://www.instagram.com/usmaniinterior1/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-premium inline-flex items-center gap-3"
+          >
+            <Instagram className="h-5 w-5" /> Follow @usmaniinterior1
+          </a>
+        </div>
       </div>
-
-      <div className="bg-background p-2 md:p-4 shadow-soft max-w-6xl mx-auto">
-        <iframe
-          src={SNAPWIDGET_SRC}
-          title="Usmani Interior Instagram feed"
-          className="w-full border-0 block"
-          style={{ height: "600px" }}
-          scrolling="no"
-          allowTransparency
-        />
-      </div>
-
-      <div className="text-center mt-10">
-        <a
-          href="https://www.instagram.com/usmaniinterior1/"
-          target="_blank"
-          rel="noopener"
-          className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-8 py-4 uppercase text-xs tracking-[0.3em] hover:bg-accent transition-smooth"
-        >
-          <Instagram className="h-4 w-4" /> Follow on Instagram
-        </a>
-      </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default InstagramFeed;

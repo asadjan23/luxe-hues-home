@@ -12,8 +12,10 @@ export default {
     },
     extend: {
       fontFamily: {
-        serif: ['"Cormorant Garamond"', 'serif'],
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['"Playfair Display"', 'serif'],
+        serif: ['"Playfair Display"', '"Cormorant Garamond"', 'serif'],
+        sans: ['Poppins', 'Inter', 'system-ui', 'sans-serif'],
+        lora: ['"Lora"', 'serif'],
       },
       colors: {
         border: "hsl(var(--border))",
